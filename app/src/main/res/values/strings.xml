@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MVPapp</string>
+
+    <string name="prompt_fname">First name</string>
+    <string name="prompt_lname">Last name</string>
+    <string name="action_submit">Submit user</string>
+    <string name="current_user">Current user:</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="successful_message">User saved successfully</string>
+</resources>
