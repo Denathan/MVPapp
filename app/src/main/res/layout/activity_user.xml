@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,37 +11,23 @@
 
         <LinearLayout
             android:id="@+id/input_form"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            style="@style/InputForm">
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <android.support.design.widget.TextInputLayout style="@style/InputLayout">
 
                 <EditText
                     android:id="@+id/first_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/prompt_fname"
-                    android:inputType="textCapWords"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+                    style="@style/EditText"
+                    android:hint="@string/prompt_fname" />
 
             </android.support.design.widget.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <android.support.design.widget.TextInputLayout style="@style/InputLayout">
 
                 <EditText
                     android:id="@+id/last_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/prompt_lname"
-                    android:inputType="textCapWords"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+                    style="@style/EditText"
+                    android:hint="@string/prompt_lname" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -51,21 +36,19 @@
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="@dimen/dp16"
                 android:text="@string/action_submit"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/current_user"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/current_user"/>
+                style="@style/TextView"
+                android:text="@string/current_user" />
 
             <TextView
                 android:id="@+id/display_user"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""/>
+                style="@style/TextView"
+                android:text="" />
 
         </LinearLayout>
     </ScrollView>

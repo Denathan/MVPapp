@@ -1,17 +1,18 @@
 package com.example.rodak.mvpapp.mainscreen;
 
-import android.view.View;
 import android.widget.EditText;
 
 import com.example.rodak.mvpapp.users.User;
 
 public interface UserActivityMVP {
 
-    interface View{
+    interface View {
 
-        void showFirstNameInputError();
+        String getFirstName();
 
-        void showLastNameInputError();
+        String getLastName();
+
+        void showInputError();
 
         void focusIncorrectInput(android.view.View focusView);
 
@@ -25,6 +26,8 @@ public interface UserActivityMVP {
         void setView(UserActivityMVP.View view);
 
         void saveUserButtonClicked(EditText mUsernameView, EditText mPasswordView);
+
+        void saveUser();
 
         void getCurrentUser();
     }

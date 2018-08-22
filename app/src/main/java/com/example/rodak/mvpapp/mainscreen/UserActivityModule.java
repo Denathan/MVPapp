@@ -10,17 +10,17 @@ import dagger.Provides;
 public class UserActivityModule {
 
     @Provides
-    public UserActivityMVP.Presenter provideLoginActivityPresenter(UserActivityMVP.Model model){
+    public UserActivityMVP.Presenter provideLoginActivityPresenter(UserActivityMVP.Model model) {
         return new UserActivityPresenter(model);
     }
 
     @Provides
-    public UserActivityMVP.Model provideLoginActivityModel(UserRepository repository){
+    public UserActivityMVP.Model provideLoginActivityModel(UserRepository repository) {
         return new UserActivityModel(repository);
     }
 
     @Provides
-    public UserRepository provideLoginRepository(){
+    public UserRepository provideLoginRepository() {
         return new Repository();
     }
 }

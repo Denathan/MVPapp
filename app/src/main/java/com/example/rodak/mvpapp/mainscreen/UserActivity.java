@@ -1,7 +1,7 @@
 package com.example.rodak.mvpapp.mainscreen;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,7 +39,16 @@ public class UserActivity extends AppCompatActivity implements UserActivityMVP.V
         ((App) getApplication()).getComponent().inject(this);
 
         mSignIn.setOnClickListener(v -> presenter.saveUserButtonClicked(firstNameView, lastNameView));
+    }
 
+    @Override
+    public String getFirstName() {
+        return firstNameView.getText().toString();
+    }
+
+    @Override
+    public String getLastName() {
+        return lastNameView.getText().toString();
     }
 
     @Override
@@ -49,13 +58,8 @@ public class UserActivity extends AppCompatActivity implements UserActivityMVP.V
     }
 
     @Override
-    public void showFirstNameInputError() {
+    public void showInputError() {
         firstNameView.setError(getString(R.string.error_field_required));
-    }
-
-    @Override
-    public void showLastNameInputError() {
-        lastNameView.setError(getString(R.string.error_field_required));
     }
 
     @Override

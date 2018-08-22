@@ -1,10 +1,8 @@
 package com.example.rodak.mvpapp.mainscreen;
 
-import android.content.Context;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 
 import com.example.rodak.mvpapp.users.User;
@@ -35,13 +33,13 @@ public class UserActivityPresenter implements UserActivityMVP.Presenter {
 
             if (view != null) {
                 if (TextUtils.isEmpty(firstName)) {
-                    view.showFirstNameInputError();
+                    view.showInputError();
                     focusView = firstNameView;
                     cancel = true;
                 }
 
                 if (TextUtils.isEmpty(lastName)) {
-                    view.showLastNameInputError();
+                    view.showInputError();
                     focusView = secondNameView;
                     cancel = true;
                 }
@@ -53,6 +51,20 @@ public class UserActivityPresenter implements UserActivityMVP.Presenter {
                     view.showUserSavedMessage();
                     getCurrentUser();
                 }
+            }
+        }
+    }
+
+    @Override
+    public void saveUser() {
+        if (view != null) {
+            if (view.getFirstName().trim().equals("") || view.getLastName().trim().equals("")) {
+                view.showInputError();
+            } else {
+
+                model.createUser(view.getFirstName(), view.getLastName());
+                view.showUserSavedMessage();
+
             }
         }
     }

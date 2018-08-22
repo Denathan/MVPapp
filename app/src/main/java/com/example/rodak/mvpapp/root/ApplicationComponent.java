@@ -1,7 +1,6 @@
 package com.example.rodak.mvpapp.root;
 
 
-
 import com.example.rodak.mvpapp.mainscreen.UserActivity;
 import com.example.rodak.mvpapp.mainscreen.UserActivityModule;
 
